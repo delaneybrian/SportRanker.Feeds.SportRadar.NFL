@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.App", "SportRanker.Feeds.SportRadar.NFL.App\SportRanker.Feeds.SportRadar.NFL.App.csproj", "{30695CCA-5BD3-4958-A77B-2D7313BA1602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.Interfaces", "..\SportRanker.Feeds.SportRadar.NFL.Interfaces\SportRanker.Feeds.SportRadar.NFL.Interfaces.csproj", "{6575CC99-965F-4DE7-9890-93A7F7A34F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.Contracts", "SportRanker.Feeds.SportRadar.NFL.Contracts\SportRanker.Feeds.SportRadar.NFL.Contracts.csproj", "{6D5A5F47-DF08-4B2E-945A-9631E8BD1F73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.Application", "SportRanker.Feeds.SportRadar.NFL.Application\SportRanker.Feeds.SportRadar.NFL.Application.csproj", "{18486AF5-B72C-4CCD-A815-B5E63E23C221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.Definitions", "SportRanker.Feeds.SportRadar.NFL.Definitions\SportRanker.Feeds.SportRadar.NFL.Definitions.csproj", "{A1CA7315-40B6-47E2-83E6-74FEBD7742CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.Infrastructure", "SportRanker.Feeds.SportRadar.NFL.Infrastructure\SportRanker.Feeds.SportRadar.NFL.Infrastructure.csproj", "{7F19AA37-4D05-47A1-9B70-E8E216254A17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30695CCA-5BD3-4958-A77B-2D7313BA1602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30695CCA-5BD3-4958-A77B-2D7313BA1602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30695CCA-5BD3-4958-A77B-2D7313BA1602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30695CCA-5BD3-4958-A77B-2D7313BA1602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6575CC99-965F-4DE7-9890-93A7F7A34F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6575CC99-965F-4DE7-9890-93A7F7A34F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6575CC99-965F-4DE7-9890-93A7F7A34F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6575CC99-965F-4DE7-9890-93A7F7A34F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D5A5F47-DF08-4B2E-945A-9631E8BD1F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D5A5F47-DF08-4B2E-945A-9631E8BD1F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D5A5F47-DF08-4B2E-945A-9631E8BD1F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D5A5F47-DF08-4B2E-945A-9631E8BD1F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18486AF5-B72C-4CCD-A815-B5E63E23C221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18486AF5-B72C-4CCD-A815-B5E63E23C221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18486AF5-B72C-4CCD-A815-B5E63E23C221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18486AF5-B72C-4CCD-A815-B5E63E23C221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CA7315-40B6-47E2-83E6-74FEBD7742CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CA7315-40B6-47E2-83E6-74FEBD7742CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CA7315-40B6-47E2-83E6-74FEBD7742CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CA7315-40B6-47E2-83E6-74FEBD7742CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F19AA37-4D05-47A1-9B70-E8E216254A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F19AA37-4D05-47A1-9B70-E8E216254A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F19AA37-4D05-47A1-9B70-E8E216254A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F19AA37-4D05-47A1-9B70-E8E216254A17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FE70E97-7714-4C71-B51A-B102604CEA3C}
+	EndGlobalSection
+EndGlobal
