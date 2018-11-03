@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\src\SportRanker.Feeds.SportRadar.NFL.Contracts\SportRanker.Feeds.SportRadar.NFL.Contracts.csproj" />
     <ProjectReference Include="..\src\SportRanker.Feeds.SportRadar.NFL.Definitions\SportRanker.Feeds.SportRadar.NFL.Definitions.csproj" />
   </ItemGroup>
 

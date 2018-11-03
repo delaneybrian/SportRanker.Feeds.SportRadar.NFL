@@ -1,14 +1,15 @@
-﻿
+﻿using System;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Definitions
 {
     public class FeedFixture
     {
-        public string KickOffTime { get; set; }
-
+        public DateTime KickOffTimeUtc { get; set; }
         public string HomeTeamId { get; set; }
         public string AwayTeamId { get; set; }
-        public string HomeTeamScore { get; set; }
-        public string AwayTeamScore { get; set; }
+        public string HomeTeamName { get; set; }
+        public string AwayTeamName { get; set; }
+        public int HomeTeamScore { get; set; }
+        public int AwayTeamScore { get; set; }
     }
 }

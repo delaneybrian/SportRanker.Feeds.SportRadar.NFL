@@ -6,6 +6,6 @@ namespace SportRanker.Feeds.SportRadar.NFL.Interfaces
 {
     public interface IFeedConsumer
     {
-        Task<ICollection<FeedFixture>> GetFixtureResultsForYesterday();
+        Task<ICollection<FeedFixture>> GetFixtureResultsForYesterdayAsync();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using SportRanker.Feeds.SportRadar.NFL.Definitions;
 using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 using System;
@@ -17,7 +18,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
             _httpClient = new HttpClient();
         }
 
-        public async Task<ICollection<FeedFixture>> GetFixtureResultsForYesterday()
+        public async Task<ICollection<FeedFixture>> GetFixtureResultsForYesterdayAsync()
         {
             ICollection<FeedFixture> feedFixtures = new List<FeedFixture>();
 
@@ -31,16 +32,35 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
             {
                 var content = await result.Content.ReadAsStringAsync();
 
-                var feedSchedule = JsonConvert.DeserializeObject<FeedSchedule>(content);
+                DefaultContractResolver contractResolver = new DefaultContractResolver
+                {
+                    NamingStrategy = new SnakeCaseNamingStrategy()
+                };
+
+                var feedSchedule = JsonConvert.DeserializeObject<FeedSchedule>(content, new JsonSerializerSettings
+                {
+                    ContractResolver = contractResolver,
+                    Formatting = Formatting.Indented
+                });
 
                 foreach(var week in feedSchedule.Weeks)
                 {
                     foreach(var game in week.Games)
                     {
                         if(game.Status == "closed" && 
-                            game.Scheduled == DateTime.UtcNow.AddDays(-1))
+                            game.Scheduled.Date == DateTime.UtcNow.Date.AddDays(-1))
                         {
-                            Console.WriteLine("HEY");
+                            feedFixtures.Add(
+                                new FeedFixture()
+                                {
+                                    KickOffTimeUtc = game.Scheduled,
+                                    HomeTeamId = game.Home.Id,
+                                    HomeTeamName = game.Home.Name,
+                                    HomeTeamScore = game.Scoring.HomePoints,
+                                    AwayTeamId = game.Away.Id,
+                                    AwayTeamName = game.Away.Name,
+                                    AwayTeamScore = game.Scoring.AwayPoints
+                                });
                         }
                     }
                 }

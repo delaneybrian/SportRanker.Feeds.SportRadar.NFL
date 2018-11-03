@@ -19,6 +19,10 @@ namespace SportRanker.Feeds.SportRadar.NFL.App
                 .RegisterType<FeedConsumer>()
                 .As<IFeedConsumer>();
 
+            builder
+                .RegisterType<Publisher>()
+                .As<IPublisher>();
+
             return builder.Build();
         }
     }

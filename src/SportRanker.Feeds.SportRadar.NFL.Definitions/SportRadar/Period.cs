@@ -5,7 +5,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Definitions
     public class Period
     {
         [DataMember(Name = "period_type")]
-        public string PeriodTtype { get; set; }
+        public string PeriodType { get; set; }
 
         [DataMember(Name = "id")]
         public string Id { get; set; }
