@@ -10,11 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SportRanker.Feeds.SportRadar.NFL.Interfaces\SportRanker.Feeds.SportRadar.NFL.Interfaces.csproj" />
     <ProjectReference Include="..\SportRanker.Feeds.SportRadar.NFL.Application\SportRanker.Feeds.SportRadar.NFL.Application.csproj" />
     <ProjectReference Include="..\SportRanker.Feeds.SportRadar.NFL.Contracts\SportRanker.Feeds.SportRadar.NFL.Contracts.csproj" />
     <ProjectReference Include="..\SportRanker.Feeds.SportRadar.NFL.Definitions\SportRanker.Feeds.SportRadar.NFL.Definitions.csproj" />
     <ProjectReference Include="..\SportRanker.Feeds.SportRadar.NFL.Infrastructure\SportRanker.Feeds.SportRadar.NFL.Infrastructure.csproj" />
+    <ProjectReference Include="..\SportRanker.Feeds.SportRadar.NFL.Interfaces\SportRanker.Feeds.SportRadar.NFL.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

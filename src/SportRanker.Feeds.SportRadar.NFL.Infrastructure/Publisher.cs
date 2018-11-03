@@ -1,8 +1,8 @@
-﻿using SportRanker.Feeds.SportRadar.NFL.Interfaces;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using Newtonsoft.Json;
 using SportRanker.Feeds.SportRadar.NFL.Contracts;
 using System.Text;
+using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
