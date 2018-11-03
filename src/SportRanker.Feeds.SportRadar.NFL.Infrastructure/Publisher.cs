@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using System;
+using RabbitMQ.Client;
 using Newtonsoft.Json;
 using SportRanker.Feeds.SportRadar.NFL.Contracts;
 using System.Text;
@@ -26,10 +27,17 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 
                 var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(exchange: NewFixtureExchange,
-                                 routingKey: NewNFLFixtureRoutingKey,
-                                 basicProperties: null,
-                                 body: body);
+                try
+                {
+                    channel.BasicPublish(exchange: NewFixtureExchange,
+                        routingKey: NewNFLFixtureRoutingKey,
+                        basicProperties: null,
+                        body: body);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Could Not Publish To Queue");
+                }
             }
         }
     }

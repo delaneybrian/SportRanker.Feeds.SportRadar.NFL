@@ -24,7 +24,9 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 
             var apiKey = "9btpg2fmxpfj7j28t5yf8rwj";
 
-            var url = $"https://api.sportradar.us/nfl/official/trial/v5/en/games/2018/REG/schedule.json?api_key={apiKey}";
+            var currentYear = DateTime.UtcNow.Year;
+
+            var url = $"https://api.sportradar.us/nfl/official/trial/v5/en/games/{currentYear}/REG/schedule.json?api_key={apiKey}";
 
             var result = await _httpClient.GetAsync(url);
 
