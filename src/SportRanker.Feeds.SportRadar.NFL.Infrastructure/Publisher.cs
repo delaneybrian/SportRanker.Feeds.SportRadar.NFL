@@ -1,8 +1,8 @@
 ﻿using System;
 using RabbitMQ.Client;
 using Newtonsoft.Json;
-using SportRanker.Feeds.SportRadar.NFL.Contracts;
 using System.Text;
+using SportRanker.Contracts.SystemEvents;
 using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
@@ -13,9 +13,14 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 
         private const string NewNFLFixtureRoutingKey = "results.nfl";
 
-        public void PublishNFLFixtureResult(FixtureResult fixtureResult)
+        public void PublishFixtureResult(FixtureResult fixtureResult)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            Uri ampqUri = new Uri(@"amqps://lhqadfns:Ox1Z9RVKMsu36ZjbLV0HEzknWsgJi36S@raven.rmq.cloudamqp.com/lhqadfns");
+
+            var factory = new ConnectionFactory()
+            {
+                Uri = ampqUri
+            };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {

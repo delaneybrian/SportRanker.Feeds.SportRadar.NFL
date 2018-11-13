@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using SportRanker.Contracts.Dto;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
@@ -55,6 +56,8 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                             feedFixtures.Add(
                                 new FeedFixture()
                                 {
+                                    FeedSource = SourceId.SportRadar,
+                                    ProviderFixtureId = game.Id,
                                     KickOffTimeUtc = game.Scheduled,
                                     HomeTeamId = game.Home.Id,
                                     HomeTeamName = game.Home.Name,

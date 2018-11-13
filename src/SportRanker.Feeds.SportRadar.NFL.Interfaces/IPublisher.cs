@@ -1,9 +1,9 @@
-﻿using SportRanker.Feeds.SportRadar.NFL.Contracts;
+﻿using SportRanker.Contracts.SystemEvents;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Interfaces
 {
     public interface IPublisher
     {
-        void PublishNFLFixtureResult(FixtureResult fixtureResult);
+        void PublishFixtureResult(FixtureResult fixtureResult);
     }
 }
