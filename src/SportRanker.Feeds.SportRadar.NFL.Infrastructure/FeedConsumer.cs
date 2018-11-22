@@ -112,8 +112,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                     {
                         foreach (var game in week.Games)
                         {
-                            if (game.Status == "closed" &&
-                                game.Scheduled.Date == DateTime.UtcNow.Date.AddDays(-1))
+                            if (game.Status == "closed")
                             {
                                 var feedFixture =
                                     new FeedFixture()
