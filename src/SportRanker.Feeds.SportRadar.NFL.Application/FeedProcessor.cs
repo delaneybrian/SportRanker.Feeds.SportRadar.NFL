@@ -20,6 +20,19 @@ namespace SportRanker.Feeds.SportRadar.NFL.Application
 
         }
 
+        public async Task ProcessHistoricalFixtures(int days)
+        {
+            var feedResults = await _feedConsumer.GetFixtureResultsForPreviousDaysAsync(days);
+
+            foreach (var feedResult in feedResults)
+            {
+                var fixtureResultMaybe = await _fixtureResultDeriver.TryGenerateFixtureResult(feedResult);
+
+                if (fixtureResultMaybe.TrySome(out var fixtureResult))
+                    _publisher.PublishFixtureResult(fixtureResult);
+            }
+        }
+
         public async Task StartProcessing()
         {
             var feedResults = await _feedConsumer.GetFixtureResultsForYesterdayAsync();

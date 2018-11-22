@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportRanker.Feeds.SportRada
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportRanker.Feeds.SportRadar.NFL.Interfaces", "SportRanker.Feeds.SportRadar.NFL.Interfaces\SportRanker.Feeds.SportRadar.NFL.Interfaces.csproj", "{898EB7E2-573B-453B-9F1B-6CDE256747A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportRanker.Feeds.SportRadar.NFL.App", "SportRanker.Feeds.SportRadar.NFL.App\SportRanker.Feeds.SportRadar.NFL.App.csproj", "{7CBF503B-1230-4853-8A7F-0AD723418FB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportRanker.Feeds.SportRadar.NFL.App", "SportRanker.Feeds.SportRadar.NFL.App\SportRanker.Feeds.SportRadar.NFL.App.csproj", "{7CBF503B-1230-4853-8A7F-0AD723418FB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
