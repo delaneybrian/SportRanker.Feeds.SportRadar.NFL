@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using SportRanker.Contracts.Dto;
+using System.Threading;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
@@ -136,6 +137,8 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                         }
                     }
                 }
+
+                Thread.Sleep(2000);
             }
 
             return feedFixtures;

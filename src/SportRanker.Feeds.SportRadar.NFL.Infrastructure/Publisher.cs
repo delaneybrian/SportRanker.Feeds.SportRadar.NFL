@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.Text;
 using SportRanker.Contracts.SystemEvents;
 using SportRanker.Feeds.SportRadar.NFL.Interfaces;
+using System.Threading;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
@@ -43,6 +44,8 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                 {
                     Console.WriteLine("Could Not Publish To Queue");
                 }
+
+                Thread.Sleep(100);
             }
         }
     }
