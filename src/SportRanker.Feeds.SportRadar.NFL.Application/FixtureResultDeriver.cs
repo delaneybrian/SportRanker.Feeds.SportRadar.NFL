@@ -36,6 +36,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Application
                     {
                         SportId = SportId.NFL,
                         Source = SourceId.SportRadar,
+                        SourceId = feedFixture.ProviderFixtureId,
                         HomeTeamId = feedFixture.HomeTeamId,
                         HomeTeamName = feedFixture.HomeTeamName,
                         HomeTeamScore = feedFixture.HomeTeamScore,

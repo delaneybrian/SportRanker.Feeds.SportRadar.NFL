@@ -1,6 +1,7 @@
 ﻿using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 using System.Threading.Tasks;
 using SportRanker.Feeds.SportRadar.NFL.Application.Extensions;
+using Newtonsoft.Json;
 
 namespace SportRanker.Feeds.SportRadar.NFL.Application
 {
