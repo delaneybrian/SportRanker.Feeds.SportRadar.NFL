@@ -20,7 +20,10 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 
         public async Task<Option<Fixture>> GetFixtureByProviderIdAsync(SourceId provider, string providerId)
         {
-            var result = await _httpClient.GetAsync($"http://sports-rivals.appspot.com/api/teams/search/findFirstBySportRadarId?sportRadarId={providerId}");
+            var result = await _httpClient.GetAsync($"http://sports-rivals.appspot.com/api/fixtures/search/findTopBySportsRadarId?name={providerId}");
+
+            if (result.IsSuccessStatusCode)
+                return Option.Some<Fixture>(new Fixture());              
 
             return Option.None<Fixture>();
         }

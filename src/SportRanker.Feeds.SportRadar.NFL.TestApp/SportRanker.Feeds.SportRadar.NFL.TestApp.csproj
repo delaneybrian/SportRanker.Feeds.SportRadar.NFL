@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A41ADB2D-0B9A-4E1E-A584-05A46F128E1D}</ProjectGuid>
+    <ProjectGuid>{D8954FCD-F7CB-4504-B39C-43C59B539051}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TestConsoleApp</RootNamespace>
-    <AssemblyName>TestConsoleApp</AssemblyName>
+    <RootNamespace>SportRanker.Feeds.SportRadar.NFL.TestApp</RootNamespace>
+    <AssemblyName>SportRanker.Feeds.SportRadar.NFL.TestApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -38,6 +38,9 @@
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net46\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Optional, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Optional.4.0.0\lib\net45\Optional.dll</HintPath>
     </Reference>
@@ -48,7 +51,7 @@
       <HintPath>..\packages\SportRanker.Contracts.Dto.1.2.0\lib\netstandard2.0\SportRanker.Contracts.Dto.dll</HintPath>
     </Reference>
     <Reference Include="SportRanker.Contracts.SystemEvents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SportRanker.Contracts.SystemEvents.1.0.0\lib\netstandard2.0\SportRanker.Contracts.SystemEvents.dll</HintPath>
+      <HintPath>..\packages\SportRanker.Contracts.SystemEvents.1.2.0\lib\netstandard2.0\SportRanker.Contracts.SystemEvents.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

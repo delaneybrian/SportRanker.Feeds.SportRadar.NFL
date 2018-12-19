@@ -3,7 +3,7 @@ using SportRanker.Feeds.SportRadar.NFL.Application;
 using SportRanker.Feeds.SportRadar.NFL.Infrastructure;
 using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 
-namespace TestConsoleApp
+namespace SportRanker.Feeds.SportRadar.NFL.TestApp
 {
     public class AppBootstrapper
     {

@@ -1,7 +1,7 @@
 using Autofac;
 using SportRanker.Feeds.SportRadar.NFL.Interfaces;
 
-namespace TestConsoleApp
+namespace SportRanker.Feeds.SportRadar.NFL.TestApp
 {
     class Program
     {
