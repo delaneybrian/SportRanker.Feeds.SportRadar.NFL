@@ -53,7 +53,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                     Name = apiTeam.Name,
                     Rating = apiTeam.Rating,
                     SportId = (long) SportId.NFL,
-                    SportName = "Name",
+                    SportName = SportId.NFL.ToString(),
                 });
             }
 

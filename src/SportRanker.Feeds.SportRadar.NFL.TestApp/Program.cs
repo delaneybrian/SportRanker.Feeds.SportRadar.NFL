@@ -1,5 +1,4 @@
-using Autofac;
-using SportRanker.Feeds.SportRadar.NFL.Interfaces;
+﻿using System;
 
 namespace SportRanker.Feeds.SportRadar.NFL.TestApp
 {
@@ -7,11 +6,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.TestApp
     {
         static void Main(string[] args)
         {
-            var container = AppBootstrapper.Bootstrap();
-
-            var feedProcessor = container.Resolve<IFeedProcessor>();
-
-            feedProcessor.ProcessHistoricalFixtures(7).Wait();
+            Console.WriteLine("Hello World!");
         }
     }
 }
