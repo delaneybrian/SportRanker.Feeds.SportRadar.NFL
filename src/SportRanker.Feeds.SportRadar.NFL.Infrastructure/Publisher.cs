@@ -10,7 +10,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
     public class Publisher : IPublisher
     {
-        private const string NewFixtureExchange = "sportsrivals";
+        private const string NewFixtureExchange = "new_fixture_exchange";
 
         private const string NewNFLFixtureRoutingKey = "results.nfl";
 
