@@ -10,7 +10,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
     public class Publisher : IPublisher
     {
-        private const string NewFixtureExchange = "new_fixture_exchange";
+        private const string NewFixtureExchange = "sportsrivals";
 
         private const string NewNFLFixtureRoutingKey = "results.nfl";
 
@@ -27,17 +27,21 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
             {
                 channel.ExchangeDeclare(
                     exchange: NewFixtureExchange,
-                    type: "topic");
+                    type: "topic",
+                    durable: true);
 
                 var message = JsonConvert.SerializeObject(fixtureResult);
 
                 var body = Encoding.UTF8.GetBytes(message);
 
+                IBasicProperties props = channel.CreateBasicProperties();
+                props.ContentType = "text/plain";
+
                 try
                 {
                     channel.BasicPublish(exchange: NewFixtureExchange,
                         routingKey: NewNFLFixtureRoutingKey,
-                        basicProperties: null,
+                        basicProperties: props,
                         body: body);
                 }
                 catch (Exception ex)
