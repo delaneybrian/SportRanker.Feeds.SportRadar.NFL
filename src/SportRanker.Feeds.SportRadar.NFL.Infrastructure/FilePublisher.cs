@@ -7,7 +7,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 {
     public class FilePublisher : IPublisher
     {
-        private string fileLocation = @"C:/Fixtures/nba.txt";
+        private string fileLocation = @"C:/Fixtures/nfl.txt";
 
         public void PublishFixtureResult(FixtureResult fixtureResult)
         {
