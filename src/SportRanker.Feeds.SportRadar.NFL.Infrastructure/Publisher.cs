@@ -49,7 +49,7 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
                     Console.WriteLine("Could Not Publish To Queue");
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(5000);
             }
         }
     }
