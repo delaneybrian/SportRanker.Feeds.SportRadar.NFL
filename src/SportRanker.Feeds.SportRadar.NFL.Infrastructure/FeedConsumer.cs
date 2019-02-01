@@ -30,50 +30,55 @@ namespace SportRanker.Feeds.SportRadar.NFL.Infrastructure
 
             var currentYear = DateTime.UtcNow.Year;
 
-            var url = $"https://api.sportradar.us/nfl/official/trial/v5/en/games/{currentYear}/REG/schedule.json?api_key={ApiKey}";
+            var compList = new List<string>() { "REG","PRE","PST" };
 
-            var result = await _httpClient.GetAsync(url);
-
-            if (result.IsSuccessStatusCode)
+            foreach (var comp in compList)
             {
-                var content = await result.Content.ReadAsStringAsync();
+                var url = $"https://api.sportradar.us/nfl/official/trial/v5/en/games/{currentYear}/{comp}/schedule.json?api_key={ApiKey}";
 
-                DefaultContractResolver contractResolver = new DefaultContractResolver
-                {
-                    NamingStrategy = new SnakeCaseNamingStrategy()
-                };
+                var result = await _httpClient.GetAsync(url);
 
-                var feedSchedule = JsonConvert.DeserializeObject<FeedSchedule>(content, new JsonSerializerSettings
+                if (result.IsSuccessStatusCode)
                 {
-                    ContractResolver = contractResolver,
-                    Formatting = Formatting.Indented
-                });
+                    var content = await result.Content.ReadAsStringAsync();
 
-                foreach (var week in feedSchedule.Weeks)
-                {
-                    foreach (var game in week.Games)
+                    DefaultContractResolver contractResolver = new DefaultContractResolver
                     {
-                        if (game.Status == "closed" &&
-                            game.Scheduled.Date == DateTime.UtcNow.Date.AddDays(-1))
+                        NamingStrategy = new SnakeCaseNamingStrategy()
+                    };
+
+                    var feedSchedule = JsonConvert.DeserializeObject<FeedSchedule>(content, new JsonSerializerSettings
+                    {
+                        ContractResolver = contractResolver,
+                        Formatting = Formatting.Indented
+                    });
+
+                    foreach (var week in feedSchedule.Weeks)
+                    {
+                        foreach (var game in week.Games)
                         {
-                            feedFixtures.Add(
-                                new FeedFixture()
-                                {
-                                    FeedSource = SourceId.SportRadar,
-                                    ProviderFixtureId = game.Id,
-                                    KickOffTimeUtc = game.Scheduled,
-                                    HomeTeamId = game.Home.Id,
-                                    HomeTeamName = game.Home.Name,
-                                    HomeTeamScore = game.Scoring.HomePoints,
-                                    AwayTeamId = game.Away.Id,
-                                    AwayTeamName = game.Away.Name,
-                                    AwayTeamScore = game.Scoring.AwayPoints
-                                });
+                            if (game.Status == "closed" &&
+                                game.Scheduled.Date == DateTime.UtcNow.Date.AddDays(-1))
+                            {
+                                feedFixtures.Add(
+                                    new FeedFixture()
+                                    {
+                                        FeedSource = SourceId.SportRadar,
+                                        ProviderFixtureId = game.Id,
+                                        KickOffTimeUtc = game.Scheduled,
+                                        HomeTeamId = game.Home.Id,
+                                        HomeTeamName = game.Home.Name,
+                                        HomeTeamScore = game.Scoring.HomePoints,
+                                        AwayTeamId = game.Away.Id,
+                                        AwayTeamName = game.Away.Name,
+                                        AwayTeamScore = game.Scoring.AwayPoints
+                                    });
+                            }
                         }
                     }
                 }
             }
-
+      
             return feedFixtures;
         }
 
